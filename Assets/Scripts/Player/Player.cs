@@ -67,8 +67,6 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         hj = GetComponent<HingeJoint2D>();
         stateMachine.Initialize(idleState);
-
-        
     }
 
     public float timer;
@@ -138,6 +136,8 @@ public class Player : MonoBehaviour
     {
         //agregar logico
     }
+
+   
 
 
 }

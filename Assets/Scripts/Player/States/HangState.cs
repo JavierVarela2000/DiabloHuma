@@ -10,6 +10,7 @@ public class HangState : PlayerState
 
     public float speed = 15;
     private HingeJoint2D hingeJoint;
+    
     public HangState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
 
@@ -34,6 +35,9 @@ public class HangState : PlayerState
         player.hj.anchor = anchor;
         player.hj.enabled = true;
         player.isHanging = true;
+
+       
+
     }
 
     public override void Exit()
@@ -43,6 +47,7 @@ public class HangState : PlayerState
         player.hj.enabled = false;
         rb.freezeRotation = true;
         player.isHanging = false;
+        
     }
 
     public override void Update()
@@ -50,7 +55,6 @@ public class HangState : PlayerState
         base.Update();
         float angularVelocity = 0;
         float currentAngle = player.hj.jointAngle;
-
 
        if (xInput != 0)
         {
@@ -68,4 +72,6 @@ public class HangState : PlayerState
         Debug.Log("Ángulo actual: " + currentAngle);
 
     }
+
+    
 }

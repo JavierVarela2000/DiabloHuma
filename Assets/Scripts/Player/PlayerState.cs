@@ -37,7 +37,7 @@ public class PlayerState
 
         if (Input.GetKeyDown(KeyCode.Z) && player.canCharge && !player.dashCharge)
         {
-            rb.AddForce(new(200, 350), ForceMode2D.Impulse);
+            player.SetVelocity(player.faceDirection*2,4);
             player.ChargeDash();
         }
 

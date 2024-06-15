@@ -17,7 +17,7 @@ public class WallSlideState : PlayerState
     {
         base.Exit();
 
-        
+
     }
 
     public override void Update()
@@ -28,19 +28,25 @@ public class WallSlideState : PlayerState
             stateMachine.ChangeState(player.wallJumpState);
             return;
         }
-        if (xInput !=0 && player.faceDirection != xInput )
+        if (xInput != 0 && player.faceDirection != xInput)
         {
-            player.SetVelocity(rb.velocity.x + (20 * -1 * player.faceDirection), rb.velocity.y +5);
+            player.SetVelocity(rb.velocity.x + (20 * -1 * player.faceDirection), rb.velocity.y + 5);
             stateMachine.ChangeState(player.idleState);
         }
-        
+
 
         if (player.IsGroundDetected())
+        {
             stateMachine.ChangeState(player.idleState);
+        }
+        else if (!player.IsWallDetected())
+        {
+            stateMachine.ChangeState(player.fallState);
+        }
 
-        player.SetVelocity(0,rb.velocity.y*0.3f);
+        player.SetVelocity(0, rb.velocity.y * 0.3f);
 
-       
+
 
     }
 }
