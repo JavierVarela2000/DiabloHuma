@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public float dashSpeed;
     public float dashDuration;
     public Animator fireAnimator;
+    public bool isPlaying = true;
+    public Vector2 checkPoint;
 
     [Header("Collision info")]
     [SerializeField] private Transform groundCheck;

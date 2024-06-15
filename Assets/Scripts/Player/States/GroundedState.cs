@@ -26,6 +26,7 @@ public class GroundedState : PlayerState
         if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
         {
             stateMachine.ChangeState(player.jumpState);
+            return;
         }
 
         else if (!player.IsGroundDetected())

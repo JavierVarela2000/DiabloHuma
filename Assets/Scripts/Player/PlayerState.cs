@@ -13,6 +13,7 @@ public class PlayerState
     protected float stateTimer;
 
     private string animBoolName;
+ 
 
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {

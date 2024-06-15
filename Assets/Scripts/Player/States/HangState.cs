@@ -69,7 +69,6 @@ public class HangState : PlayerState
             stateMachine.ChangeState(player.fallState);
         }
 
-        Debug.Log("Ángulo actual: " + currentAngle);
 
     }
 
